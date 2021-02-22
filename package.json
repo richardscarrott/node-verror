@@ -3,7 +3,6 @@
 	"version": "1.10.0",
 	"description": "richer JavaScript errors",
 	"main": "dist/verror.cjs.js",
-	"module": "dist/verror.esm.js",
 	"browser": "dist/verror.umd.js",
 	"repository": {
 		"type": "git",
