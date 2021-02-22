@@ -6,7 +6,7 @@ var mod_assert = require('assert');
 var mod_util = require('util');
 var mod_testcommon = require('./common');
 
-var VError = require('../lib/verror');
+var VError = require('../dist/verror.cjs');
 var WError = VError.WError;
 var err, suberr, stack, nodestack;
 

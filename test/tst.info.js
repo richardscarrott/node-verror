@@ -5,7 +5,7 @@
 
 var mod_assert = require('assert');
 var mod_fs = require('fs');
-var mod_verror = require('../lib/verror');
+var mod_verror = require('../dist/verror.cjs');
 
 var VError = mod_verror.VError;
 

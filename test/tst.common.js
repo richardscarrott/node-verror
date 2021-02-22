@@ -4,7 +4,7 @@
  */
 
 var mod_assert = require('assert');
-var mod_verror = require('../lib/verror');
+var mod_verror = require('../dist/verror.cjs');
 var mod_testcommon = require('./common');
 
 var SError = mod_verror.SError;

@@ -1,4 +1,10 @@
+# verror-lite
+
+Fork of 'verror', offering a much lighter footprint for use in browser.
+
 # verror: rich JavaScript errors
+
+---------------------------------------------
 
 This module provides several classes in support of Joyent's [Best Practices for
 Error Handling in Node.js](http://www.joyent.com/developers/node/design/errors).

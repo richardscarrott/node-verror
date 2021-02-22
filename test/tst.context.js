@@ -3,7 +3,7 @@
  */
 
 var mod_assert = require('assert');
-var mod_verror = require('../lib/verror');
+var mod_verror = require('../dist/verror.cjs');
 var mod_vm = require('vm');
 
 var VError = mod_verror.VError;

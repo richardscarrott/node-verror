@@ -4,7 +4,7 @@
 
 var mod_assert = require('assert');
 var mod_util = require('util');
-var mod_verror = require('../lib/verror');
+var mod_verror = require('../dist/verror.cjs');
 
 var SError = mod_verror.SError;
 var VError = mod_verror.VError;
@@ -16,8 +16,7 @@ var hasCauseWithName = VError.hasCauseWithName;
 /*
  * This class deliberately doesn't inherit from our error classes.
  */
-function MyError()
-{
+function MyError() {
 	Error.call(this, 'here is my error');
 }
 
@@ -25,8 +24,7 @@ mod_util.inherits(MyError, Error);
 MyError.prototype.name = 'MyError';
 
 
-function main()
-{
+function main() {
 	/*
 	 * We'll build up a cause chain using each of our classes and make sure
 	 * that findCauseByName() traverses all the way to the bottom.  This
@@ -37,16 +35,16 @@ function main()
 
 	err1 = new MyError();
 	err2 = new VError({
-	    'name': 'ErrorTwo',
-	    'cause': err1
+		'name': 'ErrorTwo',
+		'cause': err1
 	}, 'basic verror (number two)');
 	err3 = new SError({
-	    'name': 'ErrorThree',
-	    'cause': err2
+		'name': 'ErrorThree',
+		'cause': err2
 	}, 'strict error (number three)');
 	err4 = new WError({
-	    'name': 'ErrorFour',
-	    'cause': err3
+		'name': 'ErrorFour',
+		'cause': err3
 	}, 'werror (number four)');
 
 	/*
@@ -100,13 +98,13 @@ function main()
 	 * These functions should throw an Error when given bad argument types.
 	 */
 	mod_assert.throws(function () { findCauseByName(null, 'AnError'); },
-	    /err must be an Error/);
+		/err must be an Error/);
 	mod_assert.throws(function () { hasCauseWithName(null, 'AnError'); },
-	    /err must be an Error/);
+		/err must be an Error/);
 	mod_assert.throws(function () { findCauseByName(err1, null); },
-	    /string.*is required/);
+		/string.*is required/);
 	mod_assert.throws(function () { hasCauseWithName(err1, null); },
-	    /string.*is required/);
+		/string.*is required/);
 
 	console.error('test passed');
 }
