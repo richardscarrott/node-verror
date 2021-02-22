@@ -1,6 +1,6 @@
 {
 	"name": "verror-lite",
-	"version": "1.10.0",
+	"version": "1.10.1",
 	"description": "richer JavaScript errors",
 	"main": "dist/verror.cjs.js",
 	"browser": "dist/verror.umd.js",
